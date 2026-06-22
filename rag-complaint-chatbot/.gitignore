@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+ENV/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Data (large files - don't commit raw data)
+data/raw/*.csv
+data/processed/*.csv
+*.parquet
+
+# Vector store (large binary index files)
+vector_store/*
+!vector_store/.gitkeep
+
+# IDE
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Env vars / secrets
+.env
+*.key
+
+# Logs
+*.log
