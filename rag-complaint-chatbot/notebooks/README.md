@@ -1,4 +1,3 @@
-# Notebooks
 
 These files are written in [Jupytext "light" format](https://jupytext.readthedocs.io/)
 — plain `.py` files with `# %%` cell markers — so they're easy to diff/review

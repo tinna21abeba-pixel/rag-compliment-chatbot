@@ -1,4 +1,4 @@
-"""Unit tests for src/chunking.py"""
+
 
 import sys
 import os
@@ -21,13 +21,11 @@ def test_short_text_produces_one_chunk():
 
 def test_long_text_produces_multiple_chunks():
     splitter = get_text_splitter(chunk_size=100, chunk_overlap=20)
-    text = "word " * 200  # 1000 characters, well over chunk_size
+    text = "word " * 200
     result = chunk_complaint("c2", text, {"product_category": "Personal Loan"}, splitter)
     assert len(result) > 1
-    # chunk_index should be sequential starting at 0
     indices = [c["metadata"]["chunk_index"] for c in result]
     assert indices == list(range(len(result)))
-    # total_chunks should be consistent across all chunks of this complaint
     assert all(c["metadata"]["total_chunks"] == len(result) for c in result)
 
 
